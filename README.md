@@ -2,7 +2,6 @@
 
 Platformă simplificată ce oferă informații despre filme și despre seriale.
 Utilizatorii pot să primească recomandări personalizate pe baza preferințelor.
-
 Platforma pe care o veți implementa simulează acțiuni pe care le pot face utilizatorii pe o platforma de vizualizare de filme: ratings, vizualizare film, căutări, recomandări etc. Entitățile modelate sunt:
 
 **Video
@@ -14,7 +13,7 @@ Filmele au durată și rating
 User (utilizator)
 Are două categorii: standard și premium
 Are videouri favorite și videouri vizualizate
-Datele pentru aceste entități sunt încărcate din fișierele JSON oferite ca intrare în teste. Ele sunt ținute într-un Repository.
+Datele pentru aceste entități sunt încărcate din fișierele JSON oferite ca intrare în teste. Ele sunt ținute într-un Repository.**
 
 **Comenzile
 Acestea reprezintă abilitatea unui utilizator de a realiza acțiuni directe, fiind de 3 tipuri diferite.
@@ -23,7 +22,7 @@ View - vizualizează un video prin marcarea lui ca văzut. Dacă l-a mai văzut 
 Rating - oferă rating unui video care este deja văzut (la seriale se aplică la pentru fiecare sezon in parte(spre deosebire de vizionare, unde se face pe tot serialul)).
 Ratingul diferă în funcție de tip - pentru seriale este pentru fiecare sezon in parte.
 Ratingul poate fi dat o singură dată de către un utilizator. Pentru seriale poate fi o singură dată pe sezon.
-Un serial are mai multe sezoane, fiecare putand primi cate o nota. Rating-ul se calculeaza ca o medie aritmetica a tuturor sezoanelor.
+Un serial are mai multe sezoane, fiecare putand primi cate o nota. Rating-ul se calculeaza ca o medie aritmetica a tuturor sezoanelor.**
 
 **Query-urile
 Acestea reprezintă căutări globale efectuate de utilizatori după actori, video-uri și utilizator. Rezultatele acestor query-uri sunt afișate ca output al testului.
@@ -39,7 +38,7 @@ Pentru video-uri:
   Most Viewed - primele N video-uri sortate după numărul de vizualizări. Fiecare utilizator are și o structură de date în care ține cont de câte ori a văzut un video. În cazul sezoanelor se ia întregul serial ca și număr de vizualizări, nu independent pe sezoane.
 Pentru utilizatori:
   Number of ratings - primii N utilizatori sortați după numărul de ratings pe care le-au dat (practic cei mai activi utilizatori)
-  Precizare: Daca numarul de raspunsuri este mai mic decat N, atunci se vor returna toate. Rezultatul este de forma: “Query result: [X]”, unde X este o lista de elemente, care poate sa contina 0 elemente!
+  Precizare: Daca numarul de raspunsuri este mai mic decat N, atunci se vor returna toate. Rezultatul este de forma: “Query result: [X]”, unde X este o lista de elemente, care poate sa contina 0 elemente!**
   
 **Recomandările
   Acestea reprezintă căutări după video-uri ale utilizatorilor. Ele sunt particularizate pe baza profilului acestora și au la bază 5 strategii.
@@ -53,5 +52,5 @@ Strategiile de recomandare:
     Search - toate videoclipurile nevăzute de user dintr-un anumit gen, dat ca filtru în input. Sortate este in ordine crescatoare după rating, al doilea criteriu fiind numele.
 În cadrul recomandărilor (fără Search Recommendation), al doilea criteriu de sortare este ordinea din baza de date (adică ordinea de apariţie în câmpul “movies”/“shows” din database).
 Doar în cadrul Search Recommendation al doilea criteriu de sortare este numele.
-Atunci când nu se poate întoarce niciun video se afiseaza “XRecommendation cannot be applied!”, altfel “XRecommendation result: ”, unde X este numele strategiei.
+Atunci când nu se poate întoarce niciun video se afiseaza “XRecommendation cannot be applied!”, altfel “XRecommendation result: ”, unde X este numele strategiei.**
 
