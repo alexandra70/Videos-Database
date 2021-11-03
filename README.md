@@ -1,13 +1,11 @@
 # VideosDB - DESCRIERE
 
-În cadrul acestei teme veți implementa o platformă simplificată ce oferă informații despre filme și despre seriale.
+Platformă simplificată ce oferă informații despre filme și despre seriale.
 Utilizatorii pot să primească recomandări personalizate pe baza preferințelor.
 
-Platforma pe care o veți implementa simulează acțiuni pe care le pot face utilizatorii pe o platforma de vizualizare de filme: ratings, vizualizare film, căutări, recomandări etc.
+Platforma pe care o veți implementa simulează acțiuni pe care le pot face utilizatorii pe o platforma de vizualizare de filme: ratings, vizualizare film, căutări, recomandări etc. Entitățile modelate sunt:
 
-Entitățile pe care le veți modela vor fi:
-
-Video
+**Video
 De două tipuri: filme și seriale (shows). Diferența dintre ele este că serialele au sezoane.
 In cazul serialelor, episoadele sezoanelor sunt nesemnificative in cerintele temei.
 Toate videourile au în comun titlu, an lansare, unul sau mai multe genuri (e.g. comedie, thriller)
@@ -20,7 +18,6 @@ Datele pentru aceste entități sunt încărcate din fișierele JSON oferite ca 
 
 **Comenzile
 Acestea reprezintă abilitatea unui utilizator de a realiza acțiuni directe, fiind de 3 tipuri diferite.
-
 Favorite - adaugă un video în lista de favorite videos ale acelui user, dacă a fost deja vizionat de user-ul respectiv.
 View - vizualizează un video prin marcarea lui ca văzut. Dacă l-a mai văzut anterior, se incrementează numărul de vizualizări ale acelui video de către user. Atunci cand se vizualizeaza un serial, se vizualizeaza toate sezoanele.
 Rating - oferă rating unui video care este deja văzut (la seriale se aplică la pentru fiecare sezon in parte(spre deosebire de vizionare, unde se face pe tot serialul)).
@@ -43,9 +40,9 @@ Pentru video-uri:
 Pentru utilizatori:
   Number of ratings - primii N utilizatori sortați după numărul de ratings pe care le-au dat (practic cei mai activi utilizatori)
   Precizare: Daca numarul de raspunsuri este mai mic decat N, atunci se vor returna toate. Rezultatul este de forma: “Query result: [X]”, unde X este o lista de elemente, care poate sa contina 0 elemente!
-Recomandările
+  
+**Recomandările
   Acestea reprezintă căutări după video-uri ale utilizatorilor. Ele sunt particularizate pe baza profilului acestora și au la bază 5 strategii.
-
 Strategiile de recomandare:
   Pentru toți utilizatorii:
     Standard - întoarce primul video nevăzut de utilizator din baza de date, neexistand al doilea criteriu.
